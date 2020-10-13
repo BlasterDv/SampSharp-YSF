@@ -4,3 +4,6 @@
 [submodule "SampSharp-build"]
 	path = SampSharp-build
 	url = https://github.com/ikkentim/SampSharp-build.git
+[submodule "cakecake"]
+	path = cakecake
+	url = https://github.com/ikkentim/SampSharp-build.git
