@@ -18,5 +18,12 @@ namespace SampSharp.YSF
 
             OnPlayerPauseStateChange(player, new PlayerPauseStateEventArgs(player, pausestate));
         }
+        [Callback]
+        internal void OnPlayerStatsAndWeaponsUpdate(int playerid)
+        {
+            var player = BasePlayer.FindOrCreate(playerid);
+
+            OnPlayerStatsAndWeaponsUpdate(player, new GameMode.Events.PlayerEventArgs(player));
+        }
     }
 }

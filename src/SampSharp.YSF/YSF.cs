@@ -1,4 +1,5 @@
 ﻿using SampSharp.GameMode;
+using SampSharp.GameMode.Definitions;
 using SampSharp.GameMode.World;
 using System;
 
@@ -140,6 +141,66 @@ namespace SampSharp.YSF
                 throw new ArgumentNullException(nameof(teamplayer));
 
             return Internal.GetPlayerTeamForPlayer(player.Id, teamplayer.Id);
+        }
+        public static void SetPlayerSkinForPlayer(BasePlayer player, BasePlayer skinplayer, int skin)
+        {
+            if (player == null)
+                throw new ArgumentNullException(nameof(player));
+
+            if (skinplayer == null)
+                throw new ArgumentNullException(nameof(skinplayer));
+
+            Internal.SetPlayerSkinForPlayer(player.Id, skinplayer.Id, skin);
+        }
+        public static bool GetPlayerSkinForPlayer(BasePlayer player, BasePlayer skinplayer)
+        {
+            if (player == null)
+                throw new ArgumentNullException(nameof(player));
+
+            if (skinplayer == null)
+                throw new ArgumentNullException(nameof(skinplayer));
+
+            return Internal.GetPlayerSkinForPlayer(player.Id, skinplayer.Id);
+        }
+        public static void SetPlayerNameForPlayer(BasePlayer player, BasePlayer nameplayer, string playername)
+        {
+            if (player == null)
+                throw new ArgumentNullException(nameof(player));
+
+            if (nameplayer == null)
+                throw new ArgumentNullException(nameof(nameplayer));
+
+            Internal.SetPlayerNameForPlayer(player.Id, nameplayer.Id, playername);
+        }
+        public static bool GetPlayerNameForPlayer(BasePlayer player, BasePlayer nameplayer, out string playername, int size)
+        {
+            if (player == null)
+                throw new ArgumentNullException(nameof(player));
+
+            if (nameplayer == null)
+                throw new ArgumentNullException(nameof(nameplayer));
+
+            return Internal.GetPlayerNameForPlayer(player.Id, nameplayer.Id, out playername, size);
+        }
+        public static void SetPlayerFightStyleForPlayer(BasePlayer player, BasePlayer styleplayer, FightStyle style)
+        {
+            if (player == null)
+                throw new ArgumentNullException(nameof(player));
+
+            if (styleplayer == null)
+                throw new ArgumentNullException(nameof(styleplayer));
+
+            Internal.SetPlayerFightStyleForPlayer(player.Id, styleplayer.Id, (int)style);
+        }
+        public static int GetPlayerFightStyleForPlayer(BasePlayer player, BasePlayer skinplayer)
+        {
+            if (player == null)
+                throw new ArgumentNullException(nameof(player));
+
+            if (skinplayer == null)
+                throw new ArgumentNullException(nameof(skinplayer));
+
+            return Internal.GetPlayerFightStyleForPlayer(player.Id, skinplayer.Id);
         }
     }
 }
