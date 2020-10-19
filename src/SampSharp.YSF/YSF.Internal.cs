@@ -143,6 +143,56 @@ namespace SampSharp.YSF
             {
                 throw new NativeNotImplementedException();
             }
+            [NativeMethod]
+            public virtual bool GetPlayerSkinForPlayer(int playerid, int skinplayerid)
+            {
+                throw new NativeNotImplementedException();
+            }
+            [NativeMethod]
+            public virtual bool SetPlayerNameForPlayer(int playerid, int nameplayerid, string playername)
+            {
+                throw new NativeNotImplementedException();
+            }
+            [NativeMethod]
+            public virtual bool GetPlayerNameForPlayer(int playerid, int nameplayerid, out string playername, int size)
+            {
+                throw new NativeNotImplementedException();
+            }
+            [NativeMethod]
+            public virtual int SetPlayerFightStyleForPlayer(int playerid, int styleplayerid, int style)
+            {
+                throw new NativeNotImplementedException();
+            }
+            [NativeMethod]
+            public virtual int GetPlayerFightStyleForPlayer(int playerid, int skinplayerid)
+            {
+                throw new NativeNotImplementedException();
+            }
+            [NativeMethod]
+            public virtual int SetPlayerPosForPlayer(int playerid, int posplayerid, float fX, float fY, float fZ, bool forcesync)
+            {
+                throw new NativeNotImplementedException();
+            }
+            [NativeMethod]
+            public virtual int SetPlayerRotationQuatForPlayer(int playerid, int quatplayerid, float w, float x, float y, float z, bool forcesync)
+            {
+                throw new NativeNotImplementedException();
+            }
+            [NativeMethod]
+            public virtual int ApplyAnimationForPlayer(int playerid, int animplayerid, string animlib, string animname, float fDelta, int loop, int lockx, int locky, int freeze, int time)
+            {
+                throw new NativeNotImplementedException();
+            }
+            [NativeMethod]
+            public virtual int GetPlayerWeather(int playerid)
+            {
+                throw new NativeNotImplementedException();
+            }
+            [NativeMethod]
+            public virtual int TogglePlayerWidescreen(int playerid, bool set)
+            {
+                throw new NativeNotImplementedException();
+            }
         }
     }
 }

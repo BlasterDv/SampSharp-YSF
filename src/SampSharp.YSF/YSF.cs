@@ -4,7 +4,7 @@ using System;
 namespace SampSharp.YSF
 {
     /// <summary>
-    /// Represents a service for control the SKY.
+    /// Represents a service for control the YSF.
     /// </summary>
     public partial class YSF : Extension, IYSF
     {
@@ -12,7 +12,7 @@ namespace SampSharp.YSF
 
         public override void LoadServices(BaseMode gameMode)
         {
-            // Add the sky service to the service provider.
+            // Add the ysf service to the service provider.
             GameMode = gameMode;
             gameMode.Services.AddService<IYSF>(this);
 
