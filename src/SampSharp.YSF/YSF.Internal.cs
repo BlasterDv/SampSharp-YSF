@@ -119,7 +119,7 @@ namespace SampSharp.YSF
                 throw new NativeNotImplementedException();
             }
             [NativeMethod]
-            public virtual float GetPlayerGravity()
+            public virtual float GetPlayerGravity(int playerid)
             {
                 throw new NativeNotImplementedException();
             }
