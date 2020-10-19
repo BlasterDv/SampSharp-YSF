@@ -193,6 +193,146 @@ namespace SampSharp.YSF
             {
                 throw new NativeNotImplementedException();
             }
+            [NativeMethod]
+            public virtual int IsPlayerWidescreenToggled(int playerid)
+            {
+                throw new NativeNotImplementedException();
+            }
+            [NativeMethod]
+            public virtual int GetSpawnInfo(int playerid, out int teamid, out int modelid, out float spawn_x, out float spawn_y, out float spawn_z, out float z_angle, out int weapon1, out int weapon1_ammo, out int weapon2, out int weapon2_ammo, out int weapon3, out int weapon3_ammo)
+            {
+                throw new NativeNotImplementedException();
+            }
+            [NativeMethod]
+            public virtual int GetPlayerSkillLevel(int playerid, int skill)
+            {
+                throw new NativeNotImplementedException();
+            }
+            [NativeMethod]
+            public virtual int IsPlayerCheckpointActive(int playerid)
+            {
+                throw new NativeNotImplementedException();
+            }
+            [NativeMethod]
+            public virtual int GetPlayerCheckpoint(int playerid, out float fX, out float fY, out float fZ, out float fSize)
+            {
+                throw new NativeNotImplementedException();
+            }
+            [NativeMethod]
+            public virtual int IsPlayerRaceCheckpointActive(int playerid)
+            {
+                throw new NativeNotImplementedException();
+            }
+            [NativeMethod]
+            public virtual int GetPlayerRaceCheckpoint(int playerid, out float fX, out float fY, out float fZ, out float fNextX, out float fNextY, out float NextZ, out float fSize)
+            {
+                throw new NativeNotImplementedException();
+            }
+            [NativeMethod]
+            public virtual int GetPlayerWorldBounds(int playerid, out float x_max, out float x_min, out float y_max, out float y_min)
+            {
+                throw new NativeNotImplementedException();
+            }
+            [NativeMethod]
+            public virtual int IsPlayerInModShop(int playerid)
+            {
+                throw new NativeNotImplementedException();
+            }
+            [NativeMethod]
+            public virtual int GetPlayerSirenState(int playerid)
+            {
+                throw new NativeNotImplementedException();
+            }
+            [NativeMethod]
+            public virtual int GetPlayerLandingGearState(int playerid)
+            {
+                throw new NativeNotImplementedException();
+            }
+            [NativeMethod]
+            public virtual int GetPlayerHydraReactorAngle(int playerid)
+            {
+                throw new NativeNotImplementedException();
+            }
+            [NativeMethod]
+            public virtual float GetPlayerTrainSpeed(int playerid)
+            {
+                throw new NativeNotImplementedException();
+            }
+            [NativeMethod]
+            public virtual float GetPlayerZAim(int playerid)
+            {
+                throw new NativeNotImplementedException();
+            }
+            [NativeMethod]
+            public virtual int GetPlayerSurfingOffsets(int playerid, out float fOffsetX, out float fOffsetY, out float fOffsetZ)
+            {
+                throw new NativeNotImplementedException();
+            }
+            [NativeMethod]
+            public virtual int GetPlayerRotationQuat(int playerid, out float w, out float x, out float y, out float z)
+            {
+                throw new NativeNotImplementedException();
+            }
+            [NativeMethod]
+            public virtual int GetPlayerSpectateID(int playerid)
+            {
+                throw new NativeNotImplementedException();
+            }
+            [NativeMethod]
+            public virtual int GetPlayerSpectateType(int playerid)
+            {
+                throw new NativeNotImplementedException();
+            }
+            [NativeMethod]
+            public virtual int GetPlayerLastSyncedVehicleID(int playerid)
+            {
+                throw new NativeNotImplementedException();
+            }
+            [NativeMethod]
+            public virtual int GetPlayerLastSyncedTrailerID(int playerid)
+            {
+                throw new NativeNotImplementedException();
+            }
+            [NativeMethod]
+            public virtual int SendBulletData(int sender, int hitid, int hittype, int weaponid, float fHitOriginX, float fHitOriginY, float fHitOriginZ, float fHitTargetX, float fHitTargetY, float fHitTargetZ, float fCenterOfHitX, float fCenterOfHitY, float fCenterOfHitZ, int forplayerid)
+            {
+                throw new NativeNotImplementedException();
+            }
+            [NativeMethod]
+            public virtual int ShowPlayerForPlayer(int forplayerid, int playerid)
+            {
+                throw new NativeNotImplementedException();
+            }
+            [NativeMethod]
+            public virtual int HidePlayerForPlayer(int forplayerid, int playerid)
+            {
+                throw new NativeNotImplementedException();
+            }
+            [NativeMethod]
+            public virtual int SetPlayerChatBubbleForPlayer(int forplayerid, int playerid, string text, int color, float drawdistance, int expiretime)
+            {
+                throw new NativeNotImplementedException();
+            }
+            [NativeMethod]
+            public virtual int SetPlayerVersion(int playerid, string version)
+            {
+                throw new NativeNotImplementedException();
+            }
+            [NativeMethod]
+            public virtual int IsPlayerSpawned(int playerid)
+            {
+                throw new NativeNotImplementedException();
+            }
+            [NativeMethod]
+            public virtual int IsPlayerControllable(int playerid)
+            {
+                throw new NativeNotImplementedException();
+            }
+            [NativeMethod]
+            public virtual int SpawnForWorld(int playerid)
+            {
+                throw new NativeNotImplementedException();
+            }
         }
     }
 }
