@@ -2,6 +2,7 @@
 using SampSharp.GameMode.Events;
 using SampSharp.GameMode.World;
 using SampSharp.YSF.Events;
+using SampSharp.YSF.World;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -10,6 +11,14 @@ namespace SampSharp.YSF
 {
     public partial class YSF
     {
+        protected virtual void OnPlayerEnterPlayerGangZone(PlayerGangZone gangZone, PlayerEventArgs e)
+        {
+            PlayerEnterPlayerGangZone?.Invoke(gangZone, e);
+        }
+        protected virtual void OnPlayerLeavePlayerGangZone(PlayerGangZone gangZone, PlayerEventArgs e)
+        {
+            PlayerLeavePlayerGangZone?.Invoke(gangZone, e);   
+        }
         protected virtual void OnPlayerPauseStateChange(BasePlayer player, PlayerPauseStateEventArgs e)
         {
             PlayerPauseStateChange?.Invoke(player, e);
@@ -19,7 +28,12 @@ namespace SampSharp.YSF
             PlayerStatsAndWeaponsUpdate?.Invoke(player, e);
         }
 
+        public event EventHandler<PlayerEventArgs> PlayerEnterPlayerGangZone;
+
+        public event EventHandler<PlayerEventArgs> PlayerLeavePlayerGangZone;
+
         public event EventHandler<PlayerPauseStateEventArgs> PlayerPauseStateChange;
+
         public event EventHandler<PlayerEventArgs> PlayerStatsAndWeaponsUpdate;
 
     }

@@ -1,16 +1,37 @@
 ﻿using SampSharp.Core.Callbacks;
-using SampSharp.Core.Natives.NativeObjects;
 using SampSharp.GameMode.World;
 using SampSharp.YSF.Events;
+using SampSharp.YSF.World;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace SampSharp.YSF
 {
     public partial class YSF
     {
+        [Callback]
+        internal void OnPlayerEnterPlayerGangZone(int playerid, int zoneid)
+        {
+            var player = BasePlayer.FindOrCreate(playerid);
 
+            var gangZone = PlayerGangZone.Find(player, zoneid);
+
+            if (gangZone == null)
+                return;
+        
+            OnPlayerEnterPlayerGangZone(gangZone, new GameMode.Events.PlayerEventArgs(player));
+        }
+        [Callback]
+        internal void OnPlayerLeavePlayerGangZone(int playerid, int zoneid)
+        {
+            var player = BasePlayer.FindOrCreate(playerid);
+
+            var gangZone = PlayerGangZone.Find(player, zoneid);
+
+            if (gangZone == null)
+                return;
+
+            OnPlayerLeavePlayerGangZone(gangZone, new GameMode.Events.PlayerEventArgs(player));
+        }
         [Callback]
         internal void OnPlayerPauseStateChange(int playerid, bool pausestate)
         {
