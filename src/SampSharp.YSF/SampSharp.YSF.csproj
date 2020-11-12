@@ -9,8 +9,4 @@
     <PackageReference Include="SampSharp.GameMode" Version="0.9.1" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Definitions\" />
-  </ItemGroup>
-
 </Project>

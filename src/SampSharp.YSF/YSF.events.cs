@@ -27,6 +27,14 @@ namespace SampSharp.YSF
         {
             PlayerStatsAndWeaponsUpdate?.Invoke(player, e);
         }
+        protected virtual void OnRemoteRCONPacket(RemoteRCONPacketEventArgs e)
+        {
+            RemoteRCONPacket?.Invoke(this, e);
+        }
+        protected virtual void OnServerMessage(ServerMessageEventArgs e)
+        {
+            ServerMessage?.Invoke(this, e);
+        }
 
         public event EventHandler<PlayerEventArgs> PlayerEnterPlayerGangZone;
 
@@ -36,5 +44,8 @@ namespace SampSharp.YSF
 
         public event EventHandler<PlayerEventArgs> PlayerStatsAndWeaponsUpdate;
 
+        public event EventHandler<RemoteRCONPacketEventArgs> RemoteRCONPacket;
+
+        public event EventHandler<ServerMessageEventArgs> ServerMessage;
     }
 }

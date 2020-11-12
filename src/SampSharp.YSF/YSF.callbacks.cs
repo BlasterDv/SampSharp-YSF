@@ -17,9 +17,10 @@ namespace SampSharp.YSF
 
             if (gangZone == null)
                 return;
-        
+
             OnPlayerEnterPlayerGangZone(gangZone, new GameMode.Events.PlayerEventArgs(player));
         }
+
         [Callback]
         internal void OnPlayerLeavePlayerGangZone(int playerid, int zoneid)
         {
@@ -32,6 +33,7 @@ namespace SampSharp.YSF
 
             OnPlayerLeavePlayerGangZone(gangZone, new GameMode.Events.PlayerEventArgs(player));
         }
+
         [Callback]
         internal void OnPlayerPauseStateChange(int playerid, bool pausestate)
         {
@@ -39,12 +41,25 @@ namespace SampSharp.YSF
 
             OnPlayerPauseStateChange(player, new PlayerPauseStateEventArgs(player, pausestate));
         }
+
         [Callback]
         internal void OnPlayerStatsAndWeaponsUpdate(int playerid)
         {
             var player = BasePlayer.FindOrCreate(playerid);
 
             OnPlayerStatsAndWeaponsUpdate(player, new GameMode.Events.PlayerEventArgs(player));
+        }
+
+        [Callback]
+        internal void OnRemoteRCONPacket(string ipaddr, int port, string password, int success, string command)
+        {
+            OnRemoteRCONPacket(new RemoteRCONPacketEventArgs(ipaddr, port, password, success, command));
+        }
+
+        [Callback]
+        internal void OnServerMessage(string msg)
+        {
+            OnServerMessage(new ServerMessageEventArgs(msg));
         }
     }
 }

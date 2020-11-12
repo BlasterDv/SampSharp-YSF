@@ -40,7 +40,7 @@ namespace SampSharp.YSF.World
                 throw new NativeNotImplementedException();
             }
             [NativeMethod]
-            public virtual int IsValidPlayerGangZone(int playerid, int zoneid)
+            public virtual bool IsValidPlayerGangZone(int playerid, int zoneid)
             {
                 throw new NativeNotImplementedException();
             }
@@ -50,7 +50,7 @@ namespace SampSharp.YSF.World
                 throw new NativeNotImplementedException();
             }
             [NativeMethod]
-            public virtual int IsPlayerGangZoneVisible(int playerid, int zoneid)
+            public virtual bool IsPlayerGangZoneVisible(int playerid, int zoneid)
             {
                 throw new NativeNotImplementedException();
             }

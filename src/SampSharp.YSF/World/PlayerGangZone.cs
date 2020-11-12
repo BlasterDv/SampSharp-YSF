@@ -1,4 +1,5 @@
-﻿using SampSharp.GameMode.Pools;
+﻿using SampSharp.GameMode;
+using SampSharp.GameMode.Pools;
 using SampSharp.GameMode.SAMP;
 using SampSharp.GameMode.World;
 using System;
@@ -21,6 +22,10 @@ namespace SampSharp.YSF.World
             MaxY = maxY;
         }
 
+        public virtual bool IsValid => PlayerGangZoneInternal.Instance.IsValidPlayerGangZone(Owner.Id, Id);
+
+        public virtual bool IsVisible => PlayerGangZoneInternal.Instance.IsPlayerGangZoneVisible(Owner.Id, Id);
+
         /// <summary>
         ///     Gets the minimum x value for this <see cref="PlayerGangZone" />.
         /// </summary>
@@ -42,6 +47,7 @@ namespace SampSharp.YSF.World
         public virtual float MaxY { get; }
 
         public virtual Color Color => PlayerGangZoneInternal.Instance.PlayerGangZoneGetColor(Owner.Id, Id);
+        
         public virtual Color FlashColor => PlayerGangZoneInternal.Instance.PlayerGangZoneGetFlashColor(Owner.Id, Id);
 
         protected override void Dispose(bool disposing)
