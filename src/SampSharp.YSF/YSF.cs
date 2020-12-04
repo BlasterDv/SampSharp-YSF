@@ -202,5 +202,247 @@ namespace SampSharp.YSF
 
             return Internal.GetPlayerFightStyleForPlayer(player.Id, skinplayer.Id);
         }
+
+        public static int SetPlayerPosForPlayer(BasePlayer player, BasePlayer posPlayer, Vector3 position, bool forcesync)
+        {
+            if (player == null)
+                throw new ArgumentNullException(nameof(player));
+
+            if (posPlayer == null)
+                throw new ArgumentNullException(nameof(posPlayer));
+
+            return Internal.SetPlayerPosForPlayer(player.Id, posPlayer.Id, position.X, position.Y, position.Z, forcesync);
+        }
+        
+        public static int SetPlayerRotationQuatForPlayer(BasePlayer player, BasePlayer quatPlayer, Quaternion quat, bool forcesync)
+        {
+            return Internal.SetPlayerRotationQuatForPlayer(player.Id, quatPlayer.Id, quat.W, quat.X, quat.Y, quat.Z, forcesync);
+        }
+        
+        public static int ApplyAnimationForPlayer(BasePlayer player, BasePlayer animPlayer, string animLib, string animName, float fDelta, bool loop, bool lockX, bool lockY, bool freeze, int time)
+        {
+            return Internal.ApplyAnimationForPlayer(player.Id, animPlayer.Id, animLib, animName, fDelta, loop, lockX, lockY, freeze, time);
+        }
+        
+        public static int GetPlayerWeather(BasePlayer player)
+        {
+            if (player == null)
+                throw new ArgumentNullException(nameof(player));
+
+            return Internal.GetPlayerWeather(player.Id);
+        }
+
+        public static void TogglePlayerWidescreen(BasePlayer player, bool set)
+        {
+            if (player == null)
+                throw new ArgumentNullException(nameof(player));
+
+            Internal.TogglePlayerWidescreen(player.Id, set);
+        }
+        
+        public static bool IsPlayerWidescreenToggled(BasePlayer player)
+        {
+            if (player == null)
+                throw new ArgumentNullException(nameof(player));
+
+            return Internal.IsPlayerWidescreenToggled(player.Id);
+        }
+
+        public static void GetSpawnInfo(BasePlayer player, out int teamid, out int modelid, out Vector3 spawn, out float z_angle, out int weapon1, out int weapon1_ammo, out int weapon2, out int weapon2_ammo, out int weapon3, out int weapon3_ammo)
+        {
+            Internal.GetSpawnInfo(player.Id, out teamid, out modelid, out var spawnX, out var spawnY, out var spawnZ, out z_angle, out weapon1, out weapon1_ammo, out weapon2, out weapon2_ammo, out weapon3, out weapon3_ammo);
+            spawn = new Vector3(spawnX, spawnY, spawnZ);
+        }
+        
+        public static int GetPlayerSkillLevel(BasePlayer player, int skill)
+        {
+            if (player == null)
+                throw new ArgumentNullException(nameof(player));
+
+            return Internal.GetPlayerSkillLevel(player.Id, skill);
+        }
+        
+        public static int IsPlayerCheckpointActive(BasePlayer player)
+        {
+            if (player == null)
+                throw new ArgumentNullException(nameof(player));
+
+            return IsPlayerCheckpointActive(player);
+        }
+        
+        public static void GetPlayerCheckpoint(BasePlayer player, out Vector3 position, out float fSize)
+        {
+            if (player == null)
+                throw new ArgumentNullException(nameof(player));
+
+            Internal.GetPlayerCheckpoint(player.Id, out var fX, out var fY, out var fZ, out fSize);
+            position = new Vector3(fX, fY, fZ);
+        }
+        
+        public static int IsPlayerRaceCheckpointActive(BasePlayer player)
+        {
+            if (player == null)
+                throw new ArgumentNullException(nameof(player));
+
+            return Internal.IsPlayerRaceCheckpointActive(player.Id);
+        }
+        
+        public static void GetPlayerRaceCheckpoint(BasePlayer player, out Vector3 position, out Vector3 next, out float fSize)
+        {
+            if (player == null)
+                throw new ArgumentNullException(nameof(player));
+
+            Internal.GetPlayerRaceCheckpoint(player.Id, out var fX, out var fY, out var fZ, out var fNextX, out var fNextY, out var fNextZ, out fSize);
+            position = new Vector3(fX, fY, fZ);
+            next = new Vector3(fNextX, fNextY, fNextZ);
+        }
+        
+        public static void GetPlayerWorldBounds(BasePlayer player, out float x_max, out float x_min, out float y_max, out float y_min)
+        {
+            if (player == null)
+                throw new ArgumentNullException(nameof(player));
+
+            Internal.GetPlayerWorldBounds(player.Id, out x_max, out x_min, out y_max, out y_min);
+        }
+        
+        public static int IsPlayerInModShop(BasePlayer player)
+        {
+            if (player == null)
+                throw new ArgumentNullException(nameof(player));
+
+            return Internal.IsPlayerInModShop(player.Id);
+        }
+        
+        public static int GetPlayerSirenState(BasePlayer player)
+        {
+            if (player == null)
+                throw new ArgumentNullException(nameof(player));
+
+            return Internal.GetPlayerSirenState(player.Id);
+        }
+        
+        public static int GetPlayerLandingGearState(BasePlayer player)
+        {
+            if (player == null)
+                throw new ArgumentNullException(nameof(player));
+
+            return Internal.GetPlayerLandingGearState(player.Id);
+        }
+        
+        public static int GetPlayerHydraReactorAngle(BasePlayer player)
+        {
+            if (player == null)
+                throw new ArgumentNullException(nameof(player));
+
+            return Internal.GetPlayerHydraReactorAngle(player.Id);
+        }
+        
+        public static float GetPlayerTrainSpeed(BasePlayer player)
+        {
+            if (player == null)
+                throw new ArgumentNullException(nameof(player));
+
+            return Internal.GetPlayerTrainSpeed(player.Id);
+        }
+        
+        public static float GetPlayerZAim(BasePlayer player)
+        {
+            if (player == null)
+                throw new ArgumentNullException(nameof(player));
+
+            return Internal.GetPlayerZAim(player.Id);
+        }
+        
+        public static void GetPlayerSurfingOffsets(BasePlayer player, out Vector3 offset)
+        {
+            if (player == null)
+                throw new ArgumentNullException(nameof(player));
+
+            Internal.GetPlayerSurfingOffsets(player.Id, out var fOffsetX, out var fOffsetY, out var fOffsetZ);
+            offset = new Vector3(fOffsetX, fOffsetY, fOffsetZ);
+        }
+        
+        public static void GetPlayerRotationQuat(BasePlayer player, out Quaternion quat)
+        {
+            if (player == null)
+                throw new ArgumentNullException(nameof(player));
+
+            Internal.GetPlayerRotationQuat(player.Id, out var w, out var x, out var y, out var z);
+            quat = new Quaternion(x, y, z, w);
+        }
+        
+        public static int GetPlayerSpectateID(BasePlayer player)
+        {
+            if (player == null)
+                throw new ArgumentNullException(nameof(player));
+
+            return Internal.GetPlayerSpectateID(player.Id);
+        }
+
+        public static int GetPlayerSpectateType(BasePlayer player)
+        {
+            if (player == null)
+                throw new ArgumentNullException(nameof(player));
+
+            return Internal.GetPlayerSpectateType(player.Id);
+        }
+        
+        public static BaseVehicle GetPlayerLastSyncedVehicleID(BasePlayer player)
+        {
+            if (player == null)
+                throw new ArgumentNullException(nameof(player));
+
+            return BaseVehicle.Find(Internal.GetPlayerLastSyncedVehicleID(player.Id));
+        }
+        
+        public static int GetPlayerLastSyncedTrailerID(BasePlayer player)
+        {
+            return Internal.GetPlayerLastSyncedTrailerID(player.Id);
+        }
+        
+        public static void SendBulletData(BasePlayer senderId, BasePlayer forPlayerId, int weaponid, int hittype, int hitid, float fHitOriginX, float fHitOriginY, float fHitOriginZ, float fHitTargetX, float fHitTargetY, float fHitTargetZ, float fCenterOfHitX, float fCenterOfHitY, float fCenterOfHitZ)
+        {
+             Internal.SendBulletData(senderId.Id, forPlayerId.Id, weaponid, hittype, hitid, fHitOriginX, fHitOriginY, fHitOriginZ, fHitTargetX, fHitTargetY, fHitTargetZ, fCenterOfHitX, fCenterOfHitY, fCenterOfHitZ);
+        }
+
+        public static void SendBulletData(BasePlayer senderId, int weaponid, int hittype, int hitid, float fHitOriginX, float fHitOriginY, float fHitOriginZ, float fHitTargetX, float fHitTargetY, float fHitTargetZ, float fCenterOfHitX, float fCenterOfHitY, float fCenterOfHitZ)
+        {
+            Internal.SendBulletData(senderId.Id, -1, weaponid, hittype, hitid, fHitOriginX, fHitOriginY, fHitOriginZ, fHitTargetX, fHitTargetY, fHitTargetZ, fCenterOfHitX, fCenterOfHitY, fCenterOfHitZ);
+        }
+
+        public static void ShowPlayerForPlayer(BasePlayer forPlayer, BasePlayer player)
+        {
+            Internal.ShowPlayerForPlayer(forPlayer.Id, player.Id);
+        }
+        
+        public static void HidePlayerForPlayer(BasePlayer forPlayer, BasePlayer player)
+        {
+            Internal.HidePlayerForPlayer(forPlayer.Id, player.Id);
+        }
+        
+        public static void SetPlayerChatBubbleForPlayer(BasePlayer forPlayer, BasePlayer player, string text, int color, float drawdistance, int expiretime)
+        {
+            Internal.SetPlayerChatBubbleForPlayer(forPlayer.Id, player.Id, text, color, drawdistance, expiretime);
+        }
+        
+        public static void SetPlayerVersion(BasePlayer player, string version)
+        {
+            Internal.SetPlayerVersion(player.Id, version);
+        }
+        
+        public static bool IsPlayerSpawned(BasePlayer player)
+        {
+            return Internal.IsPlayerSpawned(player.Id);
+        }
+        
+        public static bool IsPlayerControllable(BasePlayer player)
+        {
+            return Internal.IsPlayerControllable(player.Id);
+        }
+        
+        public static void SpawnForWorld(BasePlayer player)
+        {
+            Internal.SpawnForWorld(player.Id);
+        }
     }
 }

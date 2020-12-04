@@ -179,7 +179,7 @@ namespace SampSharp.YSF
                 throw new NativeNotImplementedException();
             }
             [NativeMethod]
-            public virtual int ApplyAnimationForPlayer(int playerid, int animplayerid, string animlib, string animname, float fDelta, int loop, int lockx, int locky, int freeze, int time)
+            public virtual int ApplyAnimationForPlayer(int playerid, int animplayerid, string animlib, string animname, float fDelta, bool loop, bool lockx, bool locky, bool freeze, int time)
             {
                 throw new NativeNotImplementedException();
             }
@@ -194,7 +194,7 @@ namespace SampSharp.YSF
                 throw new NativeNotImplementedException();
             }
             [NativeMethod]
-            public virtual int IsPlayerWidescreenToggled(int playerid)
+            public virtual bool IsPlayerWidescreenToggled(int playerid)
             {
                 throw new NativeNotImplementedException();
             }
@@ -214,7 +214,7 @@ namespace SampSharp.YSF
                 throw new NativeNotImplementedException();
             }
             [NativeMethod]
-            public virtual int GetPlayerCheckpoint(int playerid, out float fX, out float fY, out float fZ, out float fSize)
+            public virtual void GetPlayerCheckpoint(int playerid, out float fX, out float fY, out float fZ, out float fSize)
             {
                 throw new NativeNotImplementedException();
             }
@@ -224,7 +224,7 @@ namespace SampSharp.YSF
                 throw new NativeNotImplementedException();
             }
             [NativeMethod]
-            public virtual int GetPlayerRaceCheckpoint(int playerid, out float fX, out float fY, out float fZ, out float fNextX, out float fNextY, out float NextZ, out float fSize)
+            public virtual int GetPlayerRaceCheckpoint(int playerid, out float fX, out float fY, out float fZ, out float fNextX, out float fNextY, out float fNextZ, out float fSize)
             {
                 throw new NativeNotImplementedException();
             }
@@ -294,7 +294,7 @@ namespace SampSharp.YSF
                 throw new NativeNotImplementedException();
             }
             [NativeMethod]
-            public virtual int SendBulletData(int sender, int hitid, int hittype, int weaponid, float fHitOriginX, float fHitOriginY, float fHitOriginZ, float fHitTargetX, float fHitTargetY, float fHitTargetZ, float fCenterOfHitX, float fCenterOfHitY, float fCenterOfHitZ, int forplayerid)
+            public virtual int SendBulletData(int sender, int forplayerid, int hitid, int hittype, int weaponid, float fHitOriginX, float fHitOriginY, float fHitOriginZ, float fHitTargetX, float fHitTargetY, float fHitTargetZ, float fCenterOfHitX, float fCenterOfHitY, float fCenterOfHitZ)
             {
                 throw new NativeNotImplementedException();
             }
@@ -319,12 +319,12 @@ namespace SampSharp.YSF
                 throw new NativeNotImplementedException();
             }
             [NativeMethod]
-            public virtual int IsPlayerSpawned(int playerid)
+            public virtual bool IsPlayerSpawned(int playerid)
             {
                 throw new NativeNotImplementedException();
             }
             [NativeMethod]
-            public virtual int IsPlayerControllable(int playerid)
+            public virtual bool IsPlayerControllable(int playerid)
             {
                 throw new NativeNotImplementedException();
             }
