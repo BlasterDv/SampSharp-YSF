@@ -2,7 +2,6 @@
 using SampSharp.GameMode.World;
 using SampSharp.YSF.Events;
 using SampSharp.YSF.World;
-using System;
 
 namespace SampSharp.YSF
 {

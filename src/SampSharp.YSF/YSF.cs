@@ -21,6 +21,7 @@ namespace SampSharp.YSF
             base.LoadServices(gameMode);
         }
 
+        #region YSF settings
         public static bool YSF_SetTickRate(int ticks)
         {
             return Internal.YSF_SetTickRate(ticks);
@@ -34,7 +35,6 @@ namespace SampSharp.YSF
         {
             Internal.YSF_EnableNightVisionFix(enable);
         }
-
         public static bool YSF_IsNightVisionFixEnabled()
         {
             return Internal.YSF_IsNightVisionFixEnabled();
@@ -64,22 +64,26 @@ namespace SampSharp.YSF
         {
             return Internal.YSF_GetAFKAccuracy();
         }
+#endregion
 
-        // Nickname
+        #region Nickname
         public static bool IsValidNickName(string name)
         {
             return Internal.IsValidNickName(name);
         }
+
         public static bool AllowNickNameCharacter(int character, bool allow)
         {
             return Internal.AllowNickNameCharacter(character, allow);
         }
+
         public static bool IsNickNameCharacterAllowed(int character)
         {
             return Internal.IsNickNameCharacterAllowed(character);
         }
+        #endregion
 
-        // Classes
+        #region Classes
         public static int GetAvailableClasses()
         {
             return Internal.GetAvailableClasses();
@@ -93,14 +97,16 @@ namespace SampSharp.YSF
         {
             return Internal.EditPlayerClass(classid, teamid, modelid, spawn.X, spawn.Y, spawn.Z, z_angle, weapon1, weapon1_ammo, weapon2, weapon2_ammo, weapon3, weapon3_ammo);
         }
+        #endregion
 
-        // Timers
+        #region Timers
         public static int GetRunningTimers()
         {
             return GetRunningTimers();
         }
+        #endregion
 
-        // Per player things
+        #region Per player things
         public static int SetPlayerGravity(BasePlayer player, float gravity)
         {
             if (player == null)
@@ -250,6 +256,9 @@ namespace SampSharp.YSF
 
         public static void GetSpawnInfo(BasePlayer player, out int teamid, out int modelid, out Vector3 spawn, out float z_angle, out int weapon1, out int weapon1_ammo, out int weapon2, out int weapon2_ammo, out int weapon3, out int weapon3_ammo)
         {
+            if (player == null)
+                throw new ArgumentNullException(nameof(player));
+
             Internal.GetSpawnInfo(player.Id, out teamid, out modelid, out var spawnX, out var spawnY, out var spawnZ, out z_angle, out weapon1, out weapon1_ammo, out weapon2, out weapon2_ammo, out weapon3, out weapon3_ammo);
             spawn = new Vector3(spawnX, spawnY, spawnZ);
         }
@@ -399,7 +408,9 @@ namespace SampSharp.YSF
         {
             return Internal.GetPlayerLastSyncedTrailerID(player.Id);
         }
-        
+
+        #endregion
+
         public static void SendBulletData(BasePlayer senderId, BasePlayer forPlayerId, int weaponid, int hittype, int hitid, float fHitOriginX, float fHitOriginY, float fHitOriginZ, float fHitTargetX, float fHitTargetY, float fHitTargetZ, float fCenterOfHitX, float fCenterOfHitY, float fCenterOfHitZ)
         {
              Internal.SendBulletData(senderId.Id, forPlayerId.Id, weaponid, hittype, hitid, fHitOriginX, fHitOriginY, fHitOriginZ, fHitTargetX, fHitTargetY, fHitTargetZ, fCenterOfHitX, fCenterOfHitY, fCenterOfHitZ);
