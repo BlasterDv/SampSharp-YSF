@@ -7,7 +7,7 @@ namespace SampSharp.YSF
 {
     public partial class YSF
     {
-        protected static YSFInternal Internal;
+        public static YSFInternal Internal { get; }
 
         static YSF()
         {
@@ -330,6 +330,152 @@ namespace SampSharp.YSF
             }
             [NativeMethod]
             public virtual int SpawnForWorld(int playerid)
+            {
+                throw new NativeNotImplementedException();
+            }
+
+            //
+            [NativeMethod]
+            public virtual int TogglePlayerGhostMode(int playerid, bool toggle)
+            {
+                throw new NativeNotImplementedException();
+            }
+
+            [NativeMethod]
+            public virtual int GetPlayerGhostMode(int playerid)
+            {
+                throw new NativeNotImplementedException();
+            }
+
+            [NativeMethod]
+            public virtual int SetPlayerSyncKeys(int playerid, int keys, int updown, int leftright)
+            {
+                throw new NativeNotImplementedException();
+            }
+
+            [NativeMethod]
+            public virtual int SetPlayerSyncPos(int playerid, float x, float y, float z)
+            {
+                throw new NativeNotImplementedException();
+            }
+
+            [NativeMethod]
+            public virtual int SetPlayerSyncVelocity(int playerid, float x, float y, float z)
+            {
+                throw new NativeNotImplementedException();
+            }
+
+            [NativeMethod]
+            public virtual int SetPlayerSyncRotationQuat(int playerid, float w, float x, float y, float z)
+            {
+                throw new NativeNotImplementedException();
+            }
+            [NativeMethod]
+            public virtual int SetPlayerSyncCameraFrontVector(int playerid, float x, float y, float z)
+            {
+                throw new NativeNotImplementedException();
+            }
+            [NativeMethod]
+            public virtual int SetPlayerSyncCameraPos(int playerid, float x, float y, float z)
+            {
+                throw new NativeNotImplementedException();
+            }
+            [NativeMethod]
+            public virtual int SetPlayerSyncCameraMode(int playerid, int mode)
+            {
+                throw new NativeNotImplementedException();
+            }
+            [NativeMethod]
+            public virtual int SetPlayerSyncWeapon(int playerid, int weaponid)
+            {
+                throw new NativeNotImplementedException();
+            }
+            [NativeMethod]
+            public virtual int GetPlayerSyncWeapon(int playerid)
+            {
+                throw new NativeNotImplementedException();
+            }
+            [NativeMethod]
+            public virtual int SetPlayerSyncWeaponState(int playerid, int weaponstate)
+            {
+                throw new NativeNotImplementedException();
+            }
+            [NativeMethod]
+            public virtual int SetPlayerSyncSpecialAction(int playerid, int actionid)
+            {
+                throw new NativeNotImplementedException();
+            }
+            [NativeMethod]
+            public virtual int SetPlayerSyncHealth(int playerid, float health)
+            {
+                throw new NativeNotImplementedException();
+            }
+            [NativeMethod]
+            public virtual int SetPlayerSyncArmour(int playerid, float armour)
+            {
+                throw new NativeNotImplementedException();
+            }
+            [NativeMethod]
+            public virtual int SetPlayerSyncPosition(int playerid, float x, float y, float z)
+            {
+                throw new NativeNotImplementedException();
+            }
+            [NativeMethod]
+            public virtual int SetPlayerSyncVehicleId(int playerid, int vehicleid)
+            {
+                throw new NativeNotImplementedException();
+            }
+            [NativeMethod]
+            public virtual int SetPlayerSyncVehicleSeat(int playerid, int seat)
+            {
+                throw new NativeNotImplementedException();
+            }
+            [NativeMethod]
+            public virtual int SetPlayerSyncVehiclePosition(int playerid, float x, float y, float z)
+            {
+                throw new NativeNotImplementedException();
+            }
+            [NativeMethod]
+            public virtual int SetPlayerSyncVehicleVelocity(int playerid, float x, float y, float z)
+            {
+                throw new NativeNotImplementedException();
+            }
+            [NativeMethod]
+            public virtual int SetPlayerSyncVehicleRotQuat(int playerid, float w, float x, float y, float z)
+            {
+                throw new NativeNotImplementedException();
+            }
+            [NativeMethod]
+            public virtual int SetPlayerSyncVehicleHealth(int playerid, float health)
+            {
+                throw new NativeNotImplementedException();
+            }
+            [NativeMethod]
+            public virtual int SetPlayerSyncTrainSpeed(int playerid, float speed)
+            {
+                throw new NativeNotImplementedException();
+            }
+            [NativeMethod]
+            public virtual int SendPlayerDeath(int playerid, int forplayerid = -1)
+            {
+                throw new NativeNotImplementedException();
+            }
+            [NativeMethod]
+            public virtual int UpdatePlayerSyncData(int playerid, int type = -1)
+            {
+                throw new NativeNotImplementedException();
+            }
+
+            // Textdraw - Global
+            [NativeMethod]
+            public virtual void TextDrawSetPos(int textdrawid, float fX, float fY) // You can change textdraw pos with it, but you need to use TextDrawShowForPlayer() after that
+            {
+                throw new NativeNotImplementedException();
+            }
+
+            // Textdraw - Player
+            [NativeMethod]
+            public virtual void PlayerTextDrawSetPos(int playerid, int textdrawid, float fX, float fY)
             {
                 throw new NativeNotImplementedException();
             }
