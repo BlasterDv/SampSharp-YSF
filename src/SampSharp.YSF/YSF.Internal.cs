@@ -466,6 +466,20 @@ namespace SampSharp.YSF
                 throw new NativeNotImplementedException();
             }
 
+            // Pause functions
+
+            [NativeMethod]
+            public virtual int IsPlayerPaused(int playerid)
+            {
+                throw new NativeNotImplementedException();
+            }
+
+            [NativeMethod]
+            public virtual int GetPlayerPausedTime(int playerid)
+            {
+                throw new NativeNotImplementedException();
+            }
+
             // Textdraw - Global
             [NativeMethod]
             public virtual void TextDrawSetPos(int textdrawid, float fX, float fY) // You can change textdraw pos with it, but you need to use TextDrawShowForPlayer() after that
