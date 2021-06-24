@@ -1,7 +1,10 @@
 ﻿using SampSharp.GameMode;
 using SampSharp.GameMode.Definitions;
 using SampSharp.GameMode.World;
+using SampSharp.YSF;
 using System;
+
+[assembly: SampSharpExtension(typeof(YSF))]
 
 namespace SampSharp.YSF
 {
